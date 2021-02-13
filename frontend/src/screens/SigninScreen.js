@@ -1,40 +1,44 @@
 import React, { useState } from "react";
 import { Row, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signin } from "../actions/userActions";
 
 export default function SigninScreen() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(signin(email, password));
   };
-
-  const [email, setEmail] = useState([]);
-  const [password, setPassword] = useState([]);
 
   return (
     <Row className="justify-content-center">
       <Form noValidate onSubmit={handleSubmit} className="w-50">
-        <Form.Row className="my-4">
+        <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
-            type="text"
+            type="email"
             name="email"
             label="email"
             placeholder="Enter email address"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </Form.Row>
-        <Form.Row className="my-4">
+        </Form.Group>
+        <Form.Group>
           <Form.Label>Password</Form.Label>
           <Form.Control
-            type="text"
+            type="password"
             name="password"
             label="password"
             placeholder="Enter password"
             onChang={(e) => setPassword(e.target.value)}
             required
           />
-        </Form.Row>
+        </Form.Group>
         <Row className="justify-content-center my-4">
           <Button
             type="submit"
@@ -45,7 +49,8 @@ export default function SigninScreen() {
           </Button>
         </Row>
         <Row className="ml-1 my-4">
-          New customer? <Link to="/register">Create your account</Link>
+          <p className="mr-1">New customer?</p>
+          <Link to="/register">Create your account</Link>
         </Row>
       </Form>
     </Row>
