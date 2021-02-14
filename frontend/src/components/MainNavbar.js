@@ -7,13 +7,24 @@ import {
   Button,
   Row,
   Badge,
+  NavDropdown,
 } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { signout } from "../actions/userActions";
 
 export default function MainNavbar() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+
+  const dispatch = useDispatch();
+  const signoutHandler = () => {
+    dispatch(signout());
+  };
+
   return (
     <Row>
       <Navbar
@@ -41,7 +52,15 @@ export default function MainNavbar() {
                 <></>
               )}{" "}
             </Nav.Link>
-            <Nav.Link href="/signin">Sign In</Nav.Link>
+            {userInfo ? (
+              <NavDropdown title={userInfo.name} id="basic-navbar-dropdown">
+                <NavDropdown.Item href="#/signout" onClick={signoutHandler}>
+                  Sign Out
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <Nav.Link href="/signin">Sign In</Nav.Link>
+            )}
           </Nav>
           <Form inline>
             <FormControl
