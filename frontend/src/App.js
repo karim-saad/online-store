@@ -9,6 +9,7 @@ import CartScreen from "./screens/CartScreen";
 import Container from "react-bootstrap/Container";
 import SigninScreen from "./screens/SigninScreen";
 import RegisterScreen from "./screens/RegisterScreen";
+import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/cart/:id?" component={CartScreen} />
         <Route path="/signin" component={SigninScreen} />
         <Route path="/register" component={RegisterScreen} />
+        <Route path="/shipping" component={ShippingAddressScreen} />
       </Container>
     </BrowserRouter>
   );

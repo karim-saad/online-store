@@ -16,6 +16,7 @@ body {
   height: 100vh;
   font-family: "Nunito", sans-serif;
 }
+
 /*
 .Main-Card {
   width: 18rem;
@@ -23,7 +24,8 @@ body {
 
 .Card-Img {
   max-height: 16rem;
-}*/
+}
+*/
 
 .Star {
   color: #f0c040;
@@ -43,14 +45,11 @@ body {
   max-width: 85vw;
 }
 
-.In-Stock {
-  color: green;
-}
-
-.Out-Of-Stock {
-  color: red;
-}
-
 .Home-Link {
   font-size: 1.2rem;
+}
+
+.Checkout-Steps > div.active {
+  border-top-color: #f0c040;
+  color: #f0c040;
 }

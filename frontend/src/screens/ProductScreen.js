@@ -56,7 +56,7 @@ export default function ProductScreen(props) {
             <Col xs lg="3">
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h2>{product.name}</h2>
+                  <h2 className="text-center">{product.name}</h2>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Rating
@@ -65,13 +65,17 @@ export default function ProductScreen(props) {
                   />
                 </ListGroup.Item>
                 <ListGroup.Item>Price: ${product.price} AUD</ListGroup.Item>
-                <ListGroup.Item>{product.description}</ListGroup.Item>
+                <ListGroup.Item className="text-justify">
+                  {product.description}
+                </ListGroup.Item>
               </ListGroup>
             </Col>
             <Col xs lg="3">
               <Card>
                 <Card.Body>
-                  <Card.Title>{product.name}</Card.Title>
+                  <Card.Title className="text-center">
+                    {product.name}
+                  </Card.Title>
                   <Rating
                     rating={product.rating}
                     numReviews={product.numReviews}
@@ -82,9 +86,9 @@ export default function ProductScreen(props) {
                     </Col>
                     <Col>
                       {product.countInStock > 0 ? (
-                        <Card.Text className="In-Stock">In Stock</Card.Text>
+                        <Card.Text className="text-success">In Stock</Card.Text>
                       ) : (
-                        <Card.Text className="Out-Of-Stock">
+                        <Card.Text className="text-danger">
                           Unavailable
                         </Card.Text>
                       )}

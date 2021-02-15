@@ -16,7 +16,7 @@ export default function HomeScreen() {
   }, [dispatch]);
 
   return (
-    <Row xs="2" md="3" lg="5" className="justify-content-center">
+    <Row xs="2" md="3" lg="5" className="justify-content-between">
       {loading ? (
         <LoadingBox />
       ) : error ? (
