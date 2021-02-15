@@ -36,7 +36,7 @@ export default function MainNavbar() {
       >
         <Link to="/">
           <Navbar.Brand>
-            <h2>Rivulet</h2>
+            <h2>Ichor</h2>
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
