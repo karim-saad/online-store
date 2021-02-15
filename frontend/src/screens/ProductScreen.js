@@ -64,7 +64,7 @@ export default function ProductScreen(props) {
                     numReviews={product.numReviews}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>Price: ${product.price} AUD</ListGroup.Item>
                 <ListGroup.Item>{product.description}</ListGroup.Item>
               </ListGroup>
             </Col>
